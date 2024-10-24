@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>school</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+import * as React from 'react';
+import { AgeGroupButton } from './AgeGroupButton';
+import { HeroText } from './HeroText';
+
+const ageGroups = [
+  { label: "Дошкольное", width: "w-[130px]" },
+  { label: "1-4 класс", width: "w-[130px]" },
+  { label: "5-8 класс", width: "w-[130px]" },
+  { label: "9-11 класс", width: "w-[219px]" },
+  { label: "Студент", width: "w-[219px]" },
+  { label: "Подготовка к экзаменам", width: "w-[492px]" }
+];
+
+export const AestheticsSchool: React.FC = () => {
+  return (
+    <main className="flex overflow-hidden flex-wrap gap-10">
+      <section className="flex flex-col max-md:max-w-full">
+        <header className="flex relative flex-col px-14 pt-32 pb-52 max-w-full text-5xl font-bold text-black whitespace-nowrap min-h-[498px] rounded-[195px] w-[441px] max-md:px-5 max-md:pt-24 max-md:pb-28 max-md:text-4xl">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/60c51810af03fb88fcba6e24c3737de6425e75f933da98995ac899ed498d541a?placeholderIfAbsent=true&apiKey=d2817ca9d23d4a9587233064975b9bd4" alt="" className="object-cover absolute inset-0 size-full" />
+          <HeroText>
+            AESTHETICS <br /> SCHOOL
+          </HeroText>
+        </header>
+
+        <section className="z-10 -mt-3.5 max-md:max-w-full">
+          <div className="flex gap-5 max-md:flex-col">
+            <div className="flex flex-col w-2/5 max-md:ml-0 max-md:w-full">
+              <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e4791fff869ff7a0cd8688931cd4c9b3e60da580a068e18d55332eeb2c855c8c?placeholderIfAbsent=true&apiKey=d2817ca9d23d4a9587233064975b9bd4" alt="School illustration" className="object-contain grow w-full aspect-[0.86]" />
+            </div>
+            <div className="flex flex-col ml-5 w-3/5 max-md:ml-0 max-md:w-full">
+              <div className="flex flex-col self-stretch my-auto w-full text-center text-black max-md:mt-10 max-md:max-w-full">
+                <h3 className="self-start text-3xl font-bold">
+                  Кто будет обучаться?
+                </h3>
+                <div className="flex overflow-hidden flex-wrap gap-8 items-start px-5 py-6 mt-1.5 text-2xl border-2 border-white border-solid rounded-[30px] max-md:px-5 max-md:max-w-full">
+                  {ageGroups.map((group, index) => (
+                    <AgeGroupButton
+                      key={index}
+                      label={group.label}
+                      width={group.width}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section className="flex flex-col self-end mt-12 max-md:mt-10 max-md:max-w-full">
+        <div className="flex flex-col pr-7 pl-20 font-bold text-black max-md:px-5 max-md:max-w-full">
+          <button className="self-end px-16 py-5 mr-16 max-w-full text-xl text-center whitespace-nowrap rounded-2xl border border-white border-solid w-[230px] max-md:px-5 max-md:mr-2.5">
+            Войти
+          </button>
+          <p className="mt-9 text-4xl text-zinc-950 max-md:max-w-full">
+            <span className="text-red-400">Учитесь</span> в{" "}
+            <span className="text-black">удобное время</span>
+            <span className="text-stone-950">.</span> <br />В{" "}
+            <span className="text-black">удобном месте</span> <br />
+            <span className="text-red-400">вместе с нами!</span>
+          </p>
+          <button className="self-center px-16 py-6 ml-7 max-w-full text-2xl text-center rounded-2xl border border-white border-solid w-[361px] max-md:px-5">
+            Начать обучение
+          </button>
+        </div>
+
+<section className="flex relative flex-col px-12 pt-9 mt-16 w-full min-h-[464px] rounded-[195px] max-md:pl-5 max-md:mt-10 max-md:max-w-full">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/e222556c977293a2b7dd1853466ccc6f04a8ab632058410ed26853a575b606bb?placeholderIfAbsent=true&apiKey=d2817ca9d23d4a9587233064975b9bd4" alt="" className="object-cover absolute inset-0 size-full" />
+          <div className="relative px-16 pt-24 rounded-[195px] max-md:px-5 max-md:pt-24 max-md:max-w-full">
+            <div className="flex gap-5 max-md:flex-col">
+              <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
+                <HeroText className="relative z-10 max-md:mt-10 max-md:mr-0">
+                  УЧЁБА <br /> ЭТО ВЕСЕЛО
+                </HeroText>
+              </div>
+              <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/f82529cc9f98459b28801727d6dc15680e098f7ffacb30977d1936207a4ed7f8?placeholderIfAbsent=true&apiKey=d2817ca9d23d4a9587233064975b9bd4" alt="Fun learning illustration" className="object-contain grow shrink-0 mt-11 max-w-full aspect-[0.75] w-[211px] max-md:mt-10" />
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  );
+};
+</body>
+</html>
